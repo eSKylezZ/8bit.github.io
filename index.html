@@ -10,6 +10,7 @@
 <link href="style.css" rel="stylesheet">
 </head>
 <body>
+
 <div id="hero">
     <video loop muted autoplay poster="">
         <source src="Nebula - 6044.mp4" type="video/mp4">
@@ -17,8 +18,29 @@
 </div>
 
 <div id ="audio">
-    <iframe width="0" height="0" src="https://www.youtube-nocookie.com/embed/UEOLPDOKdtY?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"></iframe>
+    <iframe width="0" height="0" src="https://www.youtube-nocookie.com/embed/UEOLPDOKdtY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"></iframe>
 </div>
+
+<!-- 
+SVG ==
+http://thenounproject.com/term/play/23255/ 
+https://css-tricks.com/svg-tabs-using-svg-shape-template/
+-->
+<svg class="defs">
+    <defs>
+      <path id="pause-button-shape" d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M21,33.064c0,2.201-1.688,4-3.75,4
+    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z M34.5,33.064c0,2.201-1.688,4-3.75,4
+    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z" />
+      <path id="play-button-shape" d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M31.672,26.828l-9.344,9.344
+    C20.771,37.729,19.5,37.2,19.5,35V13c0-2.2,1.271-2.729,2.828-1.172l9.344,9.344C33.229,22.729,33.229,25.271,31.672,26.828z" />
+    </defs>
+  </svg>
+  
+  <div class="buttons">
+    <!-- if we needed to change height/width we could use viewBox here -->
+    <svg class="button" id="play-button">
+      <use xlink:href="#play-button-shape">
+    </svg>
 
 </body>
 </html>
