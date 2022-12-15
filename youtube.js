@@ -1,39 +1,34 @@
-// global variable for the player
+// JavaScript Code
+
+// Create a global variable to store the YouTube player object
 var player;
 
-// this function gets called when API is ready to use
+// This function creates a new YouTube player and stores it in the global variable
 function onYouTubePlayerAPIReady() {
-    // create the global player from the specific iframe (#video)
-    player = new YT.Player('video', {
-        events: {
-            // call this function when player is ready to use
-            'onReady': onPlayerReady
-        }
-    });
+  // Select the container element for the YouTube video
+  var videoContainer = document.getElementById('bg-video');
+
+  // Create a new div element and insert the YouTube player into it
+  var playerElement = document.createElement('div');
+  videoContainer.appendChild(playerElement);
+
+  // Initialize the YouTube player
+  player = new YT.Player(playerElement, {
+    videoId: 'UEOLPDOKdtY',
+    playerVars: {
+      'autoplay': 1,
+      'controls': 0,
+      'mute': 0,
+      'loop': 1,
+      // 'playlist': 'your-youtube-video-id'
+    }
+  });
 }
 
-function onPlayerReady(event) {
-
-    // bind events
-    var playButton = document.getElementById("play-button");
-    playButton.addEventListener("click", function() {
-        player.playVideo();
-    });
-
-    var pauseButton = document.getElementById("pause-button");
-    pauseButton.addEventListener("click", function() {
-        player.pauseVideo();
-    });
-
-    var stopButton = document.getElementById("stop-button");
-    stopButton.addEventListener("click", function() {
-        player.stopVideo();
-    });
-
+// This function plays the specified audio track
+function playAudio(audioTrack) {
+  // Tell the YouTube player to play the specified audio track
+  player.setPlaybackQuality('small');
+  // player.loadPlaylist({'playlist': 'your-youtube-playlist-id', 'index': audioTrack - 1});
+  player.playVideo();
 }
-
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);

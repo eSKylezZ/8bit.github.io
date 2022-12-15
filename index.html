@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>8bit</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>8bit</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="style.css" rel="stylesheet">
+    <!-- Include the YouTube API script in the head of the page -->
+    <script src="https://www.youtube.com/player_api"></script>
+    <script src="youtube.js"></script>
 </head>
 <body>
-
-<div id="hero">
-    <video loop muted autoplay poster="">
-        <source src="Nebula - 6044.mp4" type="video/mp4">
+<!-- Create a container element for the video -->
+<div id="video-container">
+  <div id="bg-video">
+    <video id="bg-video" autoplay muted loop>
+      <source src="Nebula - 6044.mp4" type="video/mp4">
     </video>
+  </div>
+    <!-- Move the audio buttons inside the video container -->
+    <div id="audio-buttons">
+      <!-- Create a button for each YouTube audio track -->
+      <button id="audio-button-1" onclick="playAudio()">Play</button>
+      <button id="pause-button" onclick="player.pauseVideo()">Pause</button>
+    </div>
+  </div>
 </div>
-<script async src="youtube.js"></script>
-<div id ="audio">
-    <iframe id="audio" src="https://www.youtube-nocookie.com/embed/UEOLPDOKdtY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"></iframe>
-</div>
-
-<div class="buttons">
-    <button class="button" id="play-button">PLAY</button>
-    <button class="button" id="pause-button">PAUSE</button>
-    <button class="button" id="stop-button">STOP</button>
-</div>
-
 </body>
 </html>
