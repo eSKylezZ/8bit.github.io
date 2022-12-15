@@ -1,94 +1,35 @@
-#hero {
-    position: relative;
-}
+/* CSS Code */
 
-#hero video {
-    height: 100%;
-    width: 100%;
-    background-position: absolute;
-    z-index: 10;
-    object-fit: cover;
-}
-
-#hero .content {
-    background: rgba(0,0,0,0.5);
-    height: 100%;
-    width: 100%;
-    z-index: 20;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-iframe {
-	margin: 0 auto;
-	width: 0px;
-	height: 0px;
-	float: left;
-	clear: both;
-	display: block;
-	background-color: #eee;
-}
-
-.buttons {
-	position: relative;
-	margin: 0 auto 20px auto;
-    top: 50%;
-    left: 50%;
-	padding: 20px;
-	float: left;
-	display: block;
-	background-color: #eee;
-	border-radius: 4px;
-}
-.buttons:after {
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
+/* Style the video container and video */
+#video-container {
 	position: absolute;
-	pointer-events: none;
-	border-color: rgba(238, 238, 238, 0);
-	border-top-color: #eee;
-	border-width: 10px;
-	margin-left: -10px;
-}
-.button {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	/* Set the z-index property to a higher value than the audio buttons */
+	z-index: 5; 
+  }
+  #bg-video {
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 0; 
+  }
+  
+  /* Style the audio buttons */
+  #audio-buttons {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	/* Set the z-index property to a lower value than the video container */
+	z-index: 0;
+  }
+  button {
+	background-color: #333;
+	color: #fff;
 	padding: 10px 20px;
-	font-weight: bold;
-	letter-spacing: 5px;
-	outline: none;
+	border: 0;
 	cursor: pointer;
-	color: white;
-	background-color: #7F8C8D;
-	border: none;
-	border-radius: 4px;
-}
-#play-button {
-	background-color: #2ECC71;
-}
-#play-button:hover {
-	background-color: #27AE60;
-}
-#pause-button {
-	background-color: #E67E22;
-}
-#pause-button:hover {
-	background-color: #D35400;
-}
-#stop-button {
-	background-color: #E74C3C;
-}
-#stop-button:hover {
-	background-color: #C0392B;
-}
-#pause-button,
-#stop-button {
-	margin-left: 15px;
-}
-
-/* hide scrollbar and prevent scrolling */
-#div-1 { overflow: hidden; }
-#div-2 { overflow: visible; }
+  }
+  
